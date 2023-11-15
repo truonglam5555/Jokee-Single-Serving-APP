@@ -28,7 +28,7 @@ class ContentWidget extends StatelessWidget {
               content,
               textAlign: TextAlign.start,
               style: ThemeApp.textTheme.bodySmall?.copyWith(
-                color: Colors.grey.shade700,
+                color: Colors.grey.shade600,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -39,44 +39,49 @@ class ContentWidget extends StatelessWidget {
                     icon: Icon(Icons.refresh),
                   )
                 : const SizedBox(),
-            Row(
-              children: [
-                Expanded(
-                  child: TextButton(
-                    onPressed: onLike,
-                    style: TextButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(0)),
-                      backgroundColor: Colors.blueAccent,
-                    ),
-                    child: Text(
-                      'This is Funny!',
-                      style: ThemeApp.textTheme.bodySmall?.copyWith(
-                        color: textColor,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextButton(
+                      onPressed: onLike,
+                      style: TextButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0)),
+                        backgroundColor: Colors.blueAccent,
+                      ),
+                      child: Text(
+                        'This is Funny!',
+                        style: ThemeApp.textTheme.bodyMedium?.copyWith(
+                          color: textColor,
+                          fontSize: 13,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  width: 40,
-                ),
-                Expanded(
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(0)),
-                      backgroundColor: const Color.fromRGBO(88, 176, 107, 1),
-                    ),
-                    onPressed: onDisLike,
-                    child: Text(
-                      'This is not funny.',
-                      style: ThemeApp.textTheme.bodySmall?.copyWith(
-                        color: textColor,
+                  const SizedBox(
+                    width: 40,
+                  ),
+                  Expanded(
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0)),
+                        backgroundColor: const Color.fromRGBO(88, 176, 107, 1),
+                      ),
+                      onPressed: onDisLike,
+                      child: Text(
+                        'This is not funny.',
+                        style: ThemeApp.textTheme.bodyMedium?.copyWith(
+                          color: textColor,
+                          fontSize: 13,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             )
           ],
         ),

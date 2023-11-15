@@ -49,32 +49,63 @@ class _HomePageState extends State<HomePage> {
         const TitleWidget(),
         ContentWidget(
           content: widget.list[index].content,
-          isRefresh: index == widget.list.length - 1,
+          //isRefresh: index == widget.list.length - 1,
           onLike: () {
             widget.list[index].isLike = true;
-            setState(() {
-              if (index < widget.list.length - 1) {
+
+            if (index < widget.list.length - 1) {
+              setState(() {
                 index++;
-              }
-            });
+              });
+            } else {
+              showDiaLog();
+            }
           },
           onDisLike: () {
             widget.list[index].isLike = false;
-            setState(() {
-              if (index < widget.list.length - 1) {
+
+            if (index < widget.list.length - 1) {
+              setState(() {
                 index++;
-              }
-            });
+              });
+            } else {
+              showDiaLog();
+            }
           },
-          onRefresh: () {
-            setState(() {
-              index = 0;
-            });
-          },
+          // onRefresh: () {
+          //   setState(() {
+          //     index = 0;
+          //   });
+          // },
         ),
         const Divider(),
         const FooderWidget(),
       ],
     );
+  }
+
+  void showDiaLog() {
+    if (index == widget.list.length - 1) {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text('Opp!'),
+          content:
+              Text("That's all the jokes for today! Come back another day!"),
+          actions: [
+            TextButton(
+                onPressed: () => Navigator.pop(context), child: Text('Close')),
+            TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  setState(() {
+                    index = 0;
+                  });
+                },
+                child: Text('Refresh'))
+          ],
+        ),
+      );
+    }
   }
 }

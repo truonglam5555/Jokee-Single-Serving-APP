@@ -9,7 +9,7 @@ class TitleWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       color: const Color.fromRGBO(88, 176, 107, 1),
-      padding: const EdgeInsets.symmetric(vertical: 35),
+      padding: const EdgeInsets.symmetric(vertical: 50),
       child: Column(
         children: [
           Text(
@@ -27,6 +27,7 @@ class TitleWidget extends StatelessWidget {
             style: ThemeApp.textTheme.bodySmall?.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.w500,
+              fontSize: 11,
             ),
           )
         ],

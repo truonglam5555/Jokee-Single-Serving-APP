@@ -22,13 +22,16 @@ class HeaderWidget extends StatelessWidget {
             children: [
               Text(
                 'Handicrafted by',
-                style: ThemeApp.textTheme.labelMedium?.copyWith(
-                  color: Colors.grey.shade500,
+                style: ThemeApp.textTheme.bodySmall?.copyWith(
+                  color: Colors.grey.shade700,
+                  fontSize: 10,
                 ),
               ),
               Text(
                 'Jim HLS',
-                style: ThemeApp.textTheme.labelMedium,
+                style: ThemeApp.textTheme.bodySmall?.copyWith(
+                  fontSize: 11,
+                ),
               ),
             ],
           ),

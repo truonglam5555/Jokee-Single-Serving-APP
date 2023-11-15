@@ -17,7 +17,8 @@ class FooderWidget extends StatelessWidget {
             content,
             textAlign: TextAlign.center,
             style: ThemeApp.textTheme.bodySmall?.copyWith(
-              color: Colors.grey.shade500,
+              color: Colors.grey.shade600,
+              fontWeight: FontWeight.w500,
               fontSize: 11,
             ),
           ),
@@ -28,9 +29,12 @@ class FooderWidget extends StatelessWidget {
         Text(
           'Copyright 2021 HLS',
           style: ThemeApp.textTheme.bodyMedium?.copyWith(
-            color: Colors.grey.shade800,
+            color: Colors.grey.shade700,
             fontWeight: FontWeight.w500,
           ),
+        ),
+        const SizedBox(
+          height: 10,
         ),
       ],
     );
